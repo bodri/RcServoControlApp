@@ -121,13 +121,21 @@ class ViewController: UIViewController {
         pitchMicroSecond = min(2000, max(1000, pitchMicroSecond))
         rollMicroSecond = min(2000, max(1000, rollMicroSecond))
 
-        // Create UDP packets: [servoIndex, servoPos MSB, servoPos LSB]
-        let pitchData = Data(bytes: [UInt8(1), UInt8(pitchMicroSecond >> 8 & 0xFF), UInt8(pitchMicroSecond & 0xFF)])
-        let rollData = Data(bytes: [UInt8(2), UInt8(rollMicroSecond >> 8 & 0xFF), UInt8(rollMicroSecond & 0xFF)])
+        // Create UDP packets: [servoIndex, servoPosition MSB, servoPosition LSB]
+        let pitchData = Data(bytes: buildUdpPacket(1, position: pitchMicroSecond))
+        let rollData = Data(bytes: buildUdpPacket(2, position: rollMicroSecond))
         
         // Send UDP packets
         connection.send(content: pitchData, completion: .idempotent)
         connection.send(content: rollData, completion: .idempotent)
+    }
+    
+    func buildUdpPacket(_ index: UInt8, position: UInt16) -> [UInt8] {
+        var packet: [UInt8] = []
+        packet.append(index)
+        packet.append(UInt8(position >> 8 & 0xFF))
+        packet.append(UInt8(position & 0xFF))
+        return packet
     }
 }
 
