@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +12,52 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RcServoControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfp-1w-Q9R">
+                                <rect key="frame" x="175.5" y="321.5" width="24" height="24"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="eZ8-qE-ZS9"/>
+                                    <constraint firstAttribute="width" constant="24" id="n1w-uZ-xo8"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEC-CJ-rUN">
+                                <rect key="frame" x="167.5" y="333" width="40" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="aLh-jF-u8W"/>
+                                    <constraint firstAttribute="width" constant="40" id="exy-JM-SQK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ne-Ip-2Ix">
+                                <rect key="frame" x="187" y="313.5" width="1" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0n0-fb-p2b"/>
+                                    <constraint firstAttribute="width" constant="1" id="Wm2-RQ-wmj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mfp-1w-Q9R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EjN-H1-6Ip"/>
+                            <constraint firstItem="5ne-Ip-2Ix" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kqg-Cc-h6U"/>
+                            <constraint firstItem="BEC-CJ-rUN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mnt-DK-oTw"/>
+                            <constraint firstItem="BEC-CJ-rUN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TcF-Zq-Q50"/>
+                            <constraint firstItem="5ne-Ip-2Ix" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ujc-VJ-WOy"/>
+                            <constraint firstItem="mfp-1w-Q9R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jJR-1X-aO7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="horisontalContraint" destination="EjN-H1-6Ip" id="Z5I-9d-tsl"/>
+                        <outlet property="joystickView" destination="mfp-1w-Q9R" id="W2I-5j-u90"/>
+                        <outlet property="verticalContraint" destination="jJR-1X-aO7" id="E6T-Wx-f3B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
