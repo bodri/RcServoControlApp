@@ -14,4 +14,4 @@ The accompanying ESP8266 controller board project can be found here:
 
 Please also look at the video how it works:
 
-Needs a link
+[Youtube video](https://youtu.be/DdeC2BoUnDc)
